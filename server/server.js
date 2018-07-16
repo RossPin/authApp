@@ -1,7 +1,12 @@
+
 const express = require('express')
 const server = express()
-const router = require('./routes/routes.js')
+const routes = require('./routes/routes.js')
+const auth = require('./routes/auth.js')
 
-server.use('/', router)
+server.use('/', routes)
+
+server.use(express.json())
+server.use('/api/auth', auth)
 
 module.exports = server

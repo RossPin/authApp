@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {getUsers} = require('../db/db')
+const {getUsers} = require('../db/users')
 
 router.get('/', (req, res) => {
     getUsers().then(users => {
