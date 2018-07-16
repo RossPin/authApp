@@ -1,11 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-const {issue} = require('../auth/token')
+const {issue, decode} = require('../auth/token')
 const {getUsers, userExists, createUser} = require('../db/users')
 const {generate} = require('../auth/hash')
 
 router.post('/register', register, issue)
+
+router.get('/username', decode, (req, res) => {
+    res.json({
+        username: req.user.username
+    })
+} )
 
 
 function register(req, res, next){
