@@ -9,6 +9,7 @@ router.post('/register', register, issue)
 
 router.post('/login', login, issue)
 
+//secure route
 router.get('/username', decode, (req, res) => {
     res.json({
         username: req.user.username
