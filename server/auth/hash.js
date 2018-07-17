@@ -9,6 +9,12 @@ function generate(password){
     )
 }
 
+function verifyUser(hash, password){
+    const buffer = Buffer.from(password, 'utf8')
+    return sodium.crypto_pwhash_str_verify(hash, buffer)
+}
+
 module.exports = {
-    generate
+    generate,
+    verifyUser
 }
