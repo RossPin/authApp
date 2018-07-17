@@ -1,12 +1,18 @@
 {
   "name": "authApp",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "catepalmer <catherinepalmer@gmail.com>",
+  "main": "server/index.js",
+  "author": "Ross",
   "license": "MIT",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node server && webpack",
+    "dev": "nodemon --watch & webpack --watch"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "dependencies": {
     "dotenv": "^6.0.0",
@@ -15,7 +21,17 @@
     "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.1",
     "sodium": "^2.0.3",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",    
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "webpack": "^3.11.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.2"
